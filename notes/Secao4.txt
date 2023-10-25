@@ -1,0 +1,165 @@
+﻿Curso Java – Secao 4
+
+Interpretação
+
+Java é uma linguagem semi-interpretada. Linguagens compiladas possuem compiladores que geram executáveis diretos para o OS. Costumam ser mais rápidas, porém com custos técnicos para portabilidade. 
+
+Linguagens interpretadas possuem interpretadores em tempo de execução, que fazem com que o código seja igual para todos os sistemas, porém com problemas maiores de bugs e velocidade.
+
+O approach do Java é semi-interpretado: O código passa por um compilador, que gera um “Bytecode”, que é uma representação intermediária já checada para erros. O bytecode, por sua vez, será mandado para um interpretador que funciona em qualquer OS, chamado JVM. 
+
+Estrutura
+
+Java é orientado a objetos. Cada programa deve estar em uma classe. Classes relacionadas são agrupadas em nível lógico em pacotes. Pacotes relacionados são agrupados em módulos. Aplicações são agrupamentos de módulos relacionados.
+
+Ponto de entrada
+
+public static void main(String[] args)
+
+O ponto de entrada, ou ponto em que o codigo comeca a rodar, e o dado acima. Todo programa .java deve estar dentro de uma classe. O arquivo deve ter o mesmo nome da classe.
+
+Expressoes Aritmeticas
+
+Add: +
+Subt: -
+Mult: *
+Div: /
+Mod: %
+
+Precedencia (pode ser quebrada por parenteses):
+	1 - * / %
+	2 - + -
+
+Tipos de dados e variaveis
+
+Sintaxe:
+<tipo> <nome> = <valor inicial>;
+
+Cada variavel possui tipo, nome, valor e endereco.
+
+Tipos:
+byte,short,int,long,float,double,char,boolean e string.
+
+Nomes de variavel nao podem comecar com digitos. Nao podem ter espaco em branco, acentos ou til. Utilizar o padrao camelCase.
+
+Saida de dados
+
+System.out.print(); - Saida basica.
+System.out.println() - Saida basica com quebra de linha.
+System.out.printf() - Saida basica formatada.
+
+Para escrever valor de variavel double:
+
+	double x = 10.35784
+	System.out,printf(“%.2f%n”, x);
+
+	%.Xf = Numero de casas decimais.
+	%n ou \n = Newline.
+
+Para settar o divisor de virgula para ponto:
+
+	import java.util.Locale;
+
+	Locale.setDefault(Locale.US);
+
+Para concatenar elementos de escrita:
+	
+	System.out.println(“Resultado = “ + x + “ metros.”);
+
+Regra geral para printf:
+	
+	“TEXTO1 %f TEXTO2 %f TEXTO3”, variavel1, variavel2
+	
+	%f = ponto flutuante.
+	%d = inteiro
+	%s = texto (string)
+	%n = newline
+
+Processamento de dados
+
+Atribuicao:
+	<variavel> = <expressao>;
+
+Sempre indique o tipo do número, se a expressão for de ponto flutuante (não inteira).
+	b = 6.0;
+
+Casting: conversao explicita dos valores.
+
+	double a;
+	int b;
+	
+	a = 5.0;
+	b = (int) a;
+
+	System.out.println(b);
+
+Nesse caso, a esta sendo castado para int, para denotar que nao ligamos para os valores depois da virgula.
+
+Entrada de dados
+
+Para fazer entrada de dados, devemos criar um objeto do tipo “Scanner”:
+	
+	import java.util.Scanner;
+
+	Scanner sc = new Scanner(System.in);
+	String x;
+	int y;
+	double z;
+	char c;
+	
+	// CHAMANDO OS METODOS EM ORDEM, DEVEM SER DIGITADOS
+	// AS VARIAVEIS NA ORDEM, SEPARADAS POR ESPACO.
+	x = sc.next();
+	y = sc.nextInt();
+	z = sc.nextDouble(); // PEGA O DOUBLE COM O LOCALE DO SISTEMA
+	c = sc.next().charAt(0);
+	
+	sc.close();
+
+Para fazer entrada de dados ate a quebra de linha:
+
+	Scanner sc = new Scanner(System.in);
+	String s1, s2, s3;
+
+	s1 = sc.nextLine();
+	s2 = sc.nextLine();
+	s3 = sc.nextLine();
+
+	System.out.println("DADOS DIGITADOS:");
+	System.out.println(s1);
+	System.out.println(s2);
+	System.out.println(s3);
+
+	sc.close();
+
+Quebra de linha pendente: 
+
+	int x;
+	String s1, s2, s3;
+
+	x = sc.nextInt();
+	s1 = sc.nextLine();
+	s2 = sc.nextLine();
+	s3 = sc.nextLine();
+
+	System.out.println("DADOS DIGITADOS:");
+	System.out.println(x);
+	System.out.println(s1);
+	System.out.println(s2);
+	System.out.println(s3);
+
+Nesse caso, depois de digitar o int e dar enter, o s1 = sc.nextLine(); vai engolir a quebra de linha depois do x = sc.nextInt(); e deixar s1 como string vazia. Isso pode ser consertado com mais um sc.nextLine(); vazio.
+	
+	[...]
+	x = sc.nextInt();
+	sc.nextLine();
+	s1 = sc.nextLine();
+	[...]
+
+Funcoes matematicas:
+
+	A = Math.sqrt(x);
+	A = Math.pow(x, y); // X ELEVADO A Y
+	A = Math.abs(x); // ABSOLUTO DE X
+
+

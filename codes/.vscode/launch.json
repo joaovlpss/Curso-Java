@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "HorseProgram",
+            "request": "launch",
+            "mainClass": "applications.HorseProgram",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "CurrencyConverterProgram",
+            "request": "launch",
+            "mainClass": "applications.CurrencyConverterProgram",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "StudentProgram",
+            "request": "launch",
+            "mainClass": "applications.StudentProgram",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ProductProgram",
+            "request": "launch",
+            "mainClass": "applications.ProductProgram",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "codigo1_aula1",
+            "request": "launch",
+            "mainClass": "exercises.codigo1_aula1",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "codigo2_aula1_exercicios",
+            "request": "launch",
+            "mainClass": "exercises.codigo2_aula1_exercicios",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "codigo3_aula1_exercicios",
+            "request": "launch",
+            "mainClass": "exercises.codigo3_aula1_exercicios",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "codigo4_aula1_exercicios",
+            "request": "launch",
+            "mainClass": "exercises.codigo4_aula1_exercicios",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "codigo5_aula1_exercicios",
+            "request": "launch",
+            "mainClass": "exercises.codigo5_aula1_exercicios",
+            "projectName": "codes_27b79691"
+        },
+        {
+            "type": "java",
+            "name": "codigo6_aula2_exercicios",
+            "request": "launch",
+            "mainClass": "exercises.codigo6_aula2_exercicios",
+            "projectName": "codes_27b79691"
+        }
+    ]
+}
