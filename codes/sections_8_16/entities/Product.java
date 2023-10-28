@@ -27,6 +27,6 @@ public class Product {
 
     @Override
     public String toString(){
-        return "Product " + name + ", price = " + Double.toString(price);
+        return "Product = " + name + ", price = " + Double.toString(price);
     }
 }

@@ -1,6 +1,6 @@
 package sections_8_16.entities;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import sections_8_16.entities.Client;
@@ -9,7 +9,7 @@ import sections_8_16.entities.enums.OrderStatus;
 public class Order {
 
 	private Integer id;
-	private LocalDate moment;
+	private LocalDateTime moment;
 	private OrderStatus status;
 	private List<OrderItem> lsOrder = new ArrayList<OrderItem>();
 	private Client client;
@@ -17,13 +17,16 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(Integer id, LocalDate moment, OrderStatus status, Client client) {
+	public Order(Integer id, LocalDateTime moment, OrderStatus status, Client client) {
 		this.id = id;
 		this.moment = moment;
 		this.status = status;
 		this.client = client;
 	}
 
+	public LocalDateTime getMoment(){
+		return moment;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -52,6 +55,10 @@ public class Order {
 		lsOrder.remove(item);
 	}
 
+	public List<OrderItem> getOrderItems(){
+		return lsOrder;
+	}
+	
 	public double total(){
 		double accumulator = 0.00;
 
@@ -64,6 +71,6 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", moment=" + moment + ", status=" + status + "]";
+		return "Order [id = " + id + ", moment = " + moment + ", status = " + status + "]";
 	}
 }

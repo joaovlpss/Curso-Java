@@ -20,6 +20,9 @@ public class OrderItem {
         this.quantity -= i;
     }
 
+    public Product getProduct(){
+        return product;
+    }
     public double subTotal(){
         return quantity * price;
     }

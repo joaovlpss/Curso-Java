@@ -38,6 +38,6 @@ public class Client {
 
     @Override
 	public String toString() {
-		return "Client [Name=" + name + ", email=" + email + ", birthDate=" + birthDate + "]";
+		return "Client [Name = " + name + ", email = " + email + ", birthDate = " + birthDate + "]";
 	}
 }
