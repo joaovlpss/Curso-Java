@@ -37,7 +37,7 @@ public class CollaboratorProgram {
             System.out.println("=====================================");
             System.out.println("Employee #" + collaborator.getId());
             System.out.println("Name = " + collaborator.getName());
-            System.out.println("Salary = " + collaborator.getSalary());
+            System.out.println("Salary = " + collaborator.getBaseSalary());
         }
 
         sc.close();
