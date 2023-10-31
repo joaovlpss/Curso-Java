@@ -1,8 +1,8 @@
 package sections_8_16.entities;
 
 public class Product {
-    private String name;
-    private double price;
+    protected String name;
+    protected double price;
 
     public Product(String name, double price){
         this.name = name;
@@ -25,6 +25,11 @@ public class Product {
         return price;
     }
 
+    
+    public String priceTag() {
+        return String.format("$%.2f", price); // Assuming the price is in USD
+    }
+    
     @Override
     public String toString(){
         return "Product = " + name + ", price = " + Double.toString(price);
