@@ -1,5 +1,4 @@
 package sections_8_16.entities;
-import sections_8_16.entities.Product;
 
 public class OrderItem {
     private int quantity;

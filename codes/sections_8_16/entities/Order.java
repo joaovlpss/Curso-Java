@@ -3,7 +3,6 @@ package sections_8_16.entities;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import sections_8_16.entities.Client;
 import sections_8_16.entities.enums.OrderStatus;
 
 public class Order {
