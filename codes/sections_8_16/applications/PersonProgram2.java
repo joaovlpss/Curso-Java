@@ -22,7 +22,35 @@ public class PersonProgram2 {
 
             switch(choice){
                 case 1:
-
+                    promptForPerson(sc, lsPeople);
+                    break;
+                case 2:
+                    for(Person person : lsPeople){
+                        System.out.println("=============================");
+                        System.out.println("PERSON NAME = " + person.getName());
+                        System.out.println("PERSON ANNUAL INCOME = " + person.getAnnualIncome());
+                        if (person instanceof PhysicalPerson){
+                            PhysicalPerson pp = (PhysicalPerson) person; // Downcasting to PhysicalPerson
+                            System.out.println("PERSON MEDICAL EXPENSES = " + pp.getHealthExpenses());
+                        } else if (person instanceof JuridicPerson){
+                            JuridicPerson jp = (JuridicPerson) person; // Downcasting to JuridicPerson
+                            System.out.println("NUMBER OF EMPLOYEES = " + jp.getEmployeeCount());
+                        }
+                    }
+                    System.out.println("==============================");
+                    break;          
+                case 3:
+                    for(Person person : lsPeople){
+                        System.out.println("==============================");
+                        System.out.println("PERSON ANME = " + person.getName());
+                        System.out.println("PERSON ANNUAL INCOME = " + person.getAnnualIncome());
+                        System.out.println("PERSON TAXATION = " + person.taxes());
+                        System.out.println("==============================");
+                    }
+                    break;
+                case 4:
+                    choice = -1;
+                    break;
             }
         } while (choice >= 1 || choice <= 4 );
 
@@ -39,7 +67,7 @@ public class PersonProgram2 {
     }
 
     public static void promptForPerson(Scanner sc, List<Person> lsPeople){
-        System.out.print("ENTER THE NUMBER OF PEOPLE");
+        System.out.print("ENTER THE NUMBER OF PEOPLE: ");
         int peopleNumber = ValidityCheck.getValueI(sc, "", 1, 999);
         StringBuilder sb = new StringBuilder();
 
@@ -61,8 +89,24 @@ public class PersonProgram2 {
             } while (ch != 'p' && ch != 'P' && ch != 'j' && ch != 'J');
 
             if(ch ==  'P' || ch == 'p'){
-                
+                sb.append("ENTER PERSON #").append(i+1).append("'S MEDICAL EXPENSES, IF ANY: ");
+                System.out.print(sb.toString());
+                double medicalExpenses = ValidityCheck.getValueI(sc, "", 0.00, Double.MAX_VALUE);
+                sb.setLength(0);
+
+                lsPeople.add(new PhysicalPerson(medicalExpenses, annualIncome, name));
+                System.out.println("PERSON REGISTERED SUCCESSFULLY.");
+            }
+            else{
+                sb.append("ENTER PERSON #").append(i+1).append("'S NUMBER OF EMPLOYEES: ");
+                System.out.print(sb.toString());
+                int employeeNumber = ValidityCheck.getValueI(sc, "", 0, Integer.MAX_VALUE);
+                sb.setLength(0);
+
+                lsPeople.add(new JuridicPerson(name, annualIncome, employeeNumber));
+                System.out.println("PERSON REGISTERED SUCCESSFULLY.");
             }
         }
     }
+
 }

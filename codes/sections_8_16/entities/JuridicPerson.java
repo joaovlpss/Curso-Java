@@ -11,12 +11,16 @@ public class JuridicPerson extends Person{
         this.employeeCount = employeeCount;
     }
 
+    public int getEmployeeCount(){
+        return employeeCount;
+    }
+
     public double taxes(){
         if(employeeCount > 10){
-            return (annualIncome * (TAXATION_PERCENT - 2.00));
+            return (annualIncome * (TAXATION_PERCENT - 2.00) / 100);
         }
         else {
-            return (annualIncome * TAXATION_PERCENT);
+            return (annualIncome * TAXATION_PERCENT / 100);
         }
     }
     
