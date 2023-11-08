@@ -45,26 +45,59 @@ public class AccountProgram {
     }
 
     private static void registerNewAccounts() throws ApplicationException {
-        System.out.print("Enter the number of accounts to register: ");
-        int numberOfAccounts = sc.nextInt();
+        int numberOfAccounts = 0;
+    
+        // This initial try-catch block is to handle input mismatch for the number of accounts
+        try {
+            System.out.print("Enter the number of accounts to register: ");
+            numberOfAccounts = sc.nextInt();
+        } catch (InputMismatchException e) {
+            // Consuming the invalid token to prevent an infinite loop
+            sc.next();
+            throw new ApplicationException("Invalid number. Please enter a valid integer.");
+        }
+    
         for (int i = 0; i < numberOfAccounts; i++) {
-            System.out.print("Enter account number: ");
-            int accountNumber = sc.nextInt();
-            if (accountsMap.containsKey(accountNumber)) {
-                throw new ApplicationException("Account number already exists.");
+            int accountNumber = 0;
+            // Additional try-catch blocks can be placed around each input if needed
+            try {
+                System.out.print("Enter account number: ");
+                accountNumber = sc.nextInt();
+                if (accountsMap.containsKey(accountNumber)) {
+                    throw new ApplicationException("Account number already exists.");
+                }
+            } catch (InputMismatchException e) {
+                // Consuming the invalid token to prevent an infinite loop
+                sc.next();
+                throw new ApplicationException("Invalid account number. Please enter a valid integer.");
             }
             sc.nextLine(); // clear buffer
             System.out.print("Enter holder name: ");
             String holder = sc.nextLine();
-            System.out.print("Enter initial balance: ");
-            double balance = sc.nextDouble();
-            System.out.print("Enter withdraw limit: ");
-            double withdrawLimit = sc.nextDouble();
-    
+            double balance = 0;
+            try {
+                System.out.print("Enter initial balance: ");
+                balance = sc.nextDouble();
+            } catch (InputMismatchException e) {
+                // Consuming the invalid token to prevent an infinite loop
+                sc.next();
+                throw new ApplicationException("Invalid balance. Please enter a valid number.");
+            }
+            double withdrawLimit = 0;
+            try {
+                System.out.print("Enter withdraw limit: ");
+                withdrawLimit = sc.nextDouble();
+            } catch (InputMismatchException e) {
+                // Consuming the invalid token to prevent an infinite loop
+                sc.next();
+                throw new ApplicationException("Invalid withdraw limit. Please enter a valid number.");
+            }
+        
             Account newAccount = new Account(accountNumber, holder, balance, withdrawLimit);
             accountsMap.put(accountNumber, newAccount);
         }
     }
+    
     
     private static void listAllAccounts() {
         for (Account acc : accountsMap.values()) {
@@ -89,7 +122,14 @@ public class AccountProgram {
         System.out.println("2 - Withdraw");
         System.out.println("3 - Return to main menu");
         System.out.print("Choose an operation: ");
-        int operation = sc.nextInt();
+        int operation = 0;
+        try{
+        operation = sc.nextInt();
+        }
+        catch (InputMismatchException e) {
+            sc.nextLine(); // Consume the buffer.
+            throw new ApplicationException("Invalid operation selected.");
+        }
 
         switch (operation) {
             case 1: // Deposit
