@@ -59,7 +59,6 @@ public class AccountProgram {
     
         for (int i = 0; i < numberOfAccounts; i++) {
             int accountNumber = 0;
-            // Additional try-catch blocks can be placed around each input if needed
             try {
                 System.out.print("Enter account number: ");
                 accountNumber = sc.nextInt();
