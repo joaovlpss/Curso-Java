@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RentalProgram",
+            "request": "launch",
+            "mainClass": "sections_17_20.applications.RentalProgram",
+            "projectName": "codes_c10f8bae"
+        },
+        {
+            "type": "java",
+            "name": "ProductQuantityProgram",
+            "request": "launch",
+            "mainClass": "sections_17_20.applications.ProductQuantityProgram",
+            "projectName": "codes_c10f8bae"
+        },
+        {
+            "type": "java",
             "name": "HorseProgram",
             "request": "launch",
             "mainClass": "applications.HorseProgram",
