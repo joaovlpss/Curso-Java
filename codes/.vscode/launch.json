@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ContractProgram",
+            "request": "launch",
+            "mainClass": "sections_17_20.applications.ContractProgram",
+            "projectName": "codes_c10f8bae"
+        },
+        {
+            "type": "java",
             "name": "RentalProgram",
             "request": "launch",
             "mainClass": "sections_17_20.applications.RentalProgram",
